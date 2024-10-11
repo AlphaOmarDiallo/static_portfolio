@@ -62,7 +62,7 @@ enum class SocialIcon(
     ),
     GooglePlay(
         icon = Res.Icon.GOOGLE_PLAY,
-        link = "https://play.google.com/store/apps/details?id=com.alphaomardiallo.pawnedemail"
+        link = "https://play.google.com/store/apps/dev?id=5185069141850015995"
     ),
     Upwork(
         icon = Res.Icon.UPWORK,
