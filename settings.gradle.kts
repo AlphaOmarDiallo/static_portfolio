@@ -8,4 +8,3 @@ pluginManagement {
 rootProject.name = "static_portfolio"
 
 include(":site")
-include(":worker")

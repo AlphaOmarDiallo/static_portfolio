@@ -1,4 +1,6 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import kotlinx.html.link
+import org.gradle.internal.impldep.org.eclipse.jgit.transport.ReceiveCommand.link
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -14,6 +16,10 @@ kobweb {
     app {
         index {
             description.set("Powered by Kobweb")
+
+            head.add {
+                link(rel = "stylesheet", href = "/fonts/faces.css")
+            }
         }
     }
 }
@@ -32,7 +38,6 @@ kotlin {
             implementation(libs.kobweb.silk)
             implementation(libs.silk.icons.fa)
             // implementation(libs.kobwebx.markdown)
-            implementation(project(":worker"))
         }
     }
 }

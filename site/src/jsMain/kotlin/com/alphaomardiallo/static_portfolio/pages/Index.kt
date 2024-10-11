@@ -1,25 +1,32 @@
 package com.alphaomardiallo.static_portfolio.pages
 
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import com.alphaomardiallo.static_portfolio.components.ProfileCard
+import com.alphaomardiallo.static_portfolio.util.Res
+import com.varabyte.kobweb.compose.css.functions.LinearGradient
+import com.varabyte.kobweb.compose.css.functions.linearGradient
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.modifiers.backgroundImage
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.core.Page
-import org.jetbrains.compose.web.dom.Text
-import com.varabyte.kobweb.worker.rememberWorker
-import com.alphaomardiallo.static_portfolio.worker.EchoWorker
 
 @Page
 @Composable
 fun HomePage() {
-    val worker = rememberWorker { EchoWorker { output -> console.log("Echoed: $output") } }
-    LaunchedEffect(Unit) {
-        worker.postInput("Hello, worker!")
-    }
-
-    // TODO: Replace the following with your own content
-    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("THIS PAGE INTENTIONALLY LEFT BLANK")
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .backgroundImage(
+                linearGradient(
+                    dir = LinearGradient.Direction.ToRight,
+                    from = Res.Theme.GRADIENT_ONE.color,
+                    to = Res.Theme.GRADIENT_TWO.color
+                )
+            ),
+        contentAlignment = Alignment.Center
+    ){
+        ProfileCard()
     }
 }
