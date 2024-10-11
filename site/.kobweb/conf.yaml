@@ -1,0 +1,14 @@
+site:
+  title: "Static Portfolio"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/kotlin-webpack/js/developmentExecutable/static_portfolio.js"
+      api: "build/libs/static_portfolio.jar"
+    prod:
+      script: "build/kotlin-webpack/js/productionExecutable/static_portfolio.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
